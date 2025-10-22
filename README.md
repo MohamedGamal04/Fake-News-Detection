@@ -38,4 +38,4 @@ Run NLTK downloads in the notebook (punkt, stopwords, wordnet, averaged_perceptr
 3. Save vectorizer and best model artifacts for inference.
 
 ## Acknowledgments
-- The dataset used in this project is sourced from [Kaggle]([https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset]).
+- The dataset used in this project is sourced from [Kaggle](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset).
