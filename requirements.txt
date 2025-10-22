@@ -1,0 +1,8 @@
+pandas
+scikit-learn
+nltk
+num2words
+contractions
+plotly
+wordcloud
+kagglehub
