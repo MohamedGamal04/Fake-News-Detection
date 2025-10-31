@@ -2,40 +2,59 @@
 
 Binary fake/real news classifier built with the "Fake and Real News" dataset. Includes data loading, robust text preprocessing, TF‑IDF feature extraction, model selection (Logistic Regression, SVC) with hyperparameter search, evaluation (confusion matrix, ROC), and visualizations (feature importance, word clouds). Notebook-oriented and reproducible.
 
+Live demo : https://fake-news-detection-chelkxp852f4npgq7hjytm.streamlit.app/
 ## Features
-- Data cleaning and lemmatization using NLTK
-- TF‑IDF feature extraction
-- Model selection and hyperparameter tuning (Logistic Regression, SVC)
-- Feed‑forward neural network with TF‑IDF input
-- Word clouds and feature importance visualization
-- Classification reports and evaluation utilities
 
-## Requirements (recommended)
-- Python 3.8+  
-- pandas, numpy, scikit-learn  
-- nltk, num2words, contractions  
-- plotly, wordcloud
+- Text preprocessing including contraction expansion, stopword removal, lemmatization, and number conversion
+- TF-IDF feature extraction from reviews
+- Logistic Regression classification for sentiment prediction
+- Exploratory data analysis and visualization
+- Batch prediction support
+- Streamlit UI demo for interactive sentiment analysis
 
-## Installation (Windows PowerShell)
-Create & activate virtual environment:
-```powershell
-python -m venv .venv
-.venv\Scripts\Activate.ps1
+## Project Structure
+
+- `model.pkl` `vectorizer.pkl` - model and vectorizer files
+- `Fake News Detection.ipynb` - Jupyter Notebook containing preprocessing, training, and evaluation pipeline
+- `app.py` - Streamlit application script for live sentiment analysis
+- `requirements.txt` - Required Python packages
+- `README.md` - Project overview and usage instructions
+
+## Installation
+
+1. Clone the repository:
+``` powershell
+git clone https://github.com/MohamedGamal04/Fake-News-Detection.git
+cd Fake-News-Detection
 ```
-Install packages:
-```powershell
+2. Create a Python environment and activate it (recommended):
+``` powershell
+conda create -n classification-env python=3.8
+conda activate classification-env
+```
+3. Install dependencies:
+``` powershell
 pip install -r requirements.txt
 ```
-If no requirements.txt:
-```powershell
-pip install pandas numpy scikit-learn nltk num2words contractions plotly wordcloud
+4. Download necessary NLTK data resources:
+``` python
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
 ```
-Run NLTK downloads in the notebook (punkt, stopwords, wordnet, averaged_perceptron_tagger).
 
 ## Usage
-1. Open `Fake News Detection.ipynb` in VS Code or Jupyter and run cells sequentially.  
-2. Steps in the notebook: download dataset, preprocess text, extract TF‑IDF features, run GridSearchCV, evaluate models, and visualize results.  
-3. Save vectorizer and best model artifacts for inference.
 
-## Acknowledgments
-- The dataset used in this project is sourced from [Kaggle](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset).
+- Train the model and evaluate using the Jupyter Notebook.
+- To use the Streamlit app (once created and set up), run:
+``` terminal
+streamlit run app.py
+```
+
+- The Streamlit UI allows you to enter reviews manually or upload CSV files for batch prediction.
+
+## Dataset
+
+This project uses the [Fake and Real News dataset](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset).
